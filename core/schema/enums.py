@@ -1,0 +1,25 @@
+from enum import StrEnum
+
+
+class ConsultationNeedType(StrEnum):
+    """4 nhu cầu tư vấn đã chốt cho chatbot."""
+    BUY_MEDICINE = "BUY_MEDICINE"
+    MONITORING_DEVICE = "MONITORING_DEVICE"
+    INJECTION_DEVICE = "INJECTION_DEVICE"
+    SUPPORT_PRODUCT = "SUPPORT_PRODUCT"
+
+
+class WarningSeverity(StrEnum):
+    INFO = "INFO"
+    CAUTION = "CAUTION"
+    IMPORTANT = "IMPORTANT"
+    CRITICAL = "CRITICAL"
+
+
+class WarningType(StrEnum):
+    GENERAL = "GENERAL"
+    PRESCRIPTION = "PRESCRIPTION"
+    CONTRAINDICATION = "CONTRAINDICATION"
+    SPECIAL_POPULATION = "SPECIAL_POPULATION"
+    INTERACTION = "INTERACTION"
+    OTHER = "OTHER"

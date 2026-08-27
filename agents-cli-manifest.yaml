@@ -1,0 +1,14 @@
+name: "medication-agent"
+acli_version: "1.4.1"
+agent_directory: "app"
+region: "us-east1"
+base_template: "local_test"
+generated_at: "2026-08-27T18:17:20.765869+00:00"
+language: "python"
+create_params:
+  deployment_target: "none"
+  session_type: "in_memory"
+  cicd_runner: "skip"
+  is_a2a: false
+  agent_gateway: False
+  agent_guidance_filename: "AGENTS.md"
