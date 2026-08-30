@@ -20,16 +20,16 @@ WORKDIR /code
 
 COPY ./pyproject.toml ./README.md ./uv.lock* ./
 
-COPY ./app ./app
-COPY ./config ./config
-COPY ./core ./core
-COPY ./skill ./skill
-COPY ./diabetes.sav ./housing_price.sav ./
+COPY ./src ./src
+COPY ./models ./models
+COPY ./resources ./resources
+COPY ./main.py ./main.py
 
 RUN uv sync --frozen --no-dev
 
 ARG AGENT_VERSION=0.0.0
 ENV AGENT_VERSION=${AGENT_VERSION}
+ENV PYTHONPATH=/code/src
 RUN mkdir -p /code/data
 
 EXPOSE 8080

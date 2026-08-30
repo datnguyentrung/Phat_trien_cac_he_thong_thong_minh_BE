@@ -2,8 +2,9 @@ from functools import cache
 from pathlib import Path
 
 _SKILL_PATH = (
-    Path(__file__).resolve().parents[2]
-    / "skill"
+    Path(__file__).resolve().parents[3]
+    / "resources"
+    / "skills"
     / "medication_consultation"
     / "SKILL.md"
 )
@@ -15,4 +16,3 @@ def load_medication_skill() -> str:
     if not instruction:
         raise RuntimeError(f"Medication skill is empty: {_SKILL_PATH}")
     return instruction
-

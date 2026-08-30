@@ -13,7 +13,7 @@ def test_agent_uses_gemini_flash_model() -> None:
 def test_application_code_does_not_hardcode_api_keys() -> None:
     source = "\n".join(
         path.read_text(encoding="utf-8")
-        for path in Path("app").rglob("*.py")
+        for path in Path("src/app").rglob("*.py")
     )
 
     assert "AIzaSy" not in source

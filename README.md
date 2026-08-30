@@ -1,9 +1,8 @@
 # Medication Consultation Agent
 
 FastAPI service dùng Google Agent Development Kit (ADK) để quản lý agent,
-runner, tool và session. LLM inference đi qua endpoint tương thích OpenAI của
-DeepSeek với model cố định `deepseek-v4-flash`; dự án không dùng Gemini,
-Vertex AI hay Google API key.
+runner, tool và session. Agent hiện dùng Gemini qua Google ADK, kết hợp Neo4j
+và dữ liệu Long Châu để tạo câu trả lời tư vấn thuốc có grounding.
 
 ## Kiến trúc
 
@@ -27,9 +26,6 @@ adapter độc lập qua Protocol nên có thể kiểm thử bằng fake mà kh
 Sao chép `.env.example` thành `.env`, sau đó điền các biến bắt buộc:
 
 ```dotenv
-DEEPSEEK_API_KEY=...
-DEEPSEEK_BASE_URL=https://your-endpoint/v1
-DEEPSEEK_MODEL=deepseek-v4-flash
 GOOGLE_API_KEY=...
 NEO4J_URI=neo4j+s://...
 NEO4J_USERNAME=neo4j
@@ -38,9 +34,9 @@ NEO4J_DATABASE=neo4j
 SESSION_DB_URL=sqlite+aiosqlite:///./data/adk_sessions.db
 ```
 
-`app/agent.py` hiện dùng Gemini (`gemini-3.1-flash-lite`) nên cần `GOOGLE_API_KEY`
+`src/app/agent.py` hiện dùng Gemini (`gemini-3.1-flash-lite`) nên cần `GOOGLE_API_KEY`
 lấy từ https://aistudio.google.com/apikey. Ứng dụng dừng ngay khi khởi động nếu
-thiếu cấu hình DeepSeek/Neo4j.
+thiếu cấu hình Gemini/Neo4j.
 
 ## Chạy local
 
@@ -95,7 +91,7 @@ Request fields, mã lỗi HTTP 400 và JSON response của hai prediction endpoi
 
 ```powershell
 uv run pytest -q
-uv run ruff check app config core tests main.py
+uv run ruff check src tests main.py scripts
 uv run python -c "import main; print(main.app.title)"
 ```
 
@@ -105,7 +101,7 @@ session ownership, SSE sanitization/disconnect và regression prediction routes.
 
 ## Giới hạn an toàn
 
-Skill tại `skill/medication_consultation/SKILL.md` buộc agent dùng dữ liệu từ
+Skill tại `resources/skills/medication_consultation/SKILL.md` buộc agent dùng dữ liệu từ
 tool cho phát biểu cụ thể, không chẩn đoán/kê đơn/tự tạo liều, không dùng FOMO
 hoặc ngôn ngữ chốt sale. Dữ liệu Long Châu chỉ là sản phẩm tham khảo; giá và
 trạng thái có thể thay đổi.

@@ -1,7 +1,7 @@
 [project]
 name = "medication-agent"
 version = "0.1.0"
-description = "Medication consultation agent using Google ADK, DeepSeek and Neo4j"
+description = "Medication consultation agent using Google ADK, Gemini and Neo4j"
 authors = [
     {name = "Medication Agent Team"},
 ]
@@ -90,9 +90,8 @@ build-backend = "hatchling.build"
 
 
 [tool.pytest.ini_options]
-pythonpath = "."
+pythonpath = "src"
 asyncio_default_fixture_loop_scope = "session"
 
 [tool.hatch.build.targets.wheel]
-packages = ["app", "config", "core"]
-
+packages = ["src/app", "src/config", "src/core"]

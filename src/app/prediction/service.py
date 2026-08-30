@@ -6,7 +6,8 @@ import joblib
 import numpy as np
 import pandas as pd
 
-_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+_PROJECT_ROOT = Path(__file__).resolve().parents[3]
+_MODELS_DIR = _PROJECT_ROOT / "models"
 _DIABETES_FIELDS = [
     "Pregnancies",
     "Glucose",
@@ -28,12 +29,12 @@ _ZERO_AS_MISSING = [
 
 @cache
 def _load_diabetes_model():
-    return joblib.load(_PROJECT_ROOT / "diabetes.sav")
+    return joblib.load(_MODELS_DIR / "diabetes.sav")
 
 
 @cache
 def _load_housing_model():
-    return joblib.load(_PROJECT_ROOT / "housing_price.sav")
+    return joblib.load(_MODELS_DIR / "housing_price.sav")
 
 
 def predict_diabetes(features: dict[str, Any]) -> dict[str, Any]:

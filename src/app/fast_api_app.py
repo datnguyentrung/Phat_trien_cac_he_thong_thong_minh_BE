@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(
     title="Medication Consultation Agent",
-    description="Google ADK medication consultation with DeepSeek V4 Flash",
+    description="Google ADK medication consultation with Gemini Flash Lite",
     version="1.0.0",
     lifespan=lifespan,
 )

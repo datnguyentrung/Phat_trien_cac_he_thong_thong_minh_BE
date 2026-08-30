@@ -2,18 +2,13 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_FILE = PROJECT_ROOT / ".env"
 
 
 class Settings(BaseSettings):
     # --- Google ---
     GOOGLE_API_KEY: str = ""
-
-    # --- DeepSeek ---
-    DEEPSEEK_API_KEY: str = ""
-    DEEPSEEK_BASE_URL: str = ""
-    DEEPSEEK_MODEL: str = "deepseek-v4-flash"
 
     # --- Neo4j ---
     NEO4J_URI: str = ""
@@ -42,8 +37,7 @@ class Settings(BaseSettings):
 
     def validate_runtime(self) -> None:
         required = {
-            "DEEPSEEK_API_KEY": self.DEEPSEEK_API_KEY,
-            "DEEPSEEK_BASE_URL": self.DEEPSEEK_BASE_URL,
+            "GOOGLE_API_KEY": self.GOOGLE_API_KEY,
             "NEO4J_URI": self.NEO4J_URI,
             "NEO4J_USERNAME": self.NEO4J_USERNAME,
             "NEO4J_PASSWORD": self.NEO4J_PASSWORD,
@@ -51,8 +45,6 @@ class Settings(BaseSettings):
         missing = [name for name, value in required.items() if not value.strip()]
         if missing:
             raise RuntimeError(f"Missing required settings: {', '.join(missing)}")
-        if self.DEEPSEEK_MODEL != "deepseek-v4-flash":
-            raise RuntimeError("DEEPSEEK_MODEL must be deepseek-v4-flash")
 
 
 settings = Settings()

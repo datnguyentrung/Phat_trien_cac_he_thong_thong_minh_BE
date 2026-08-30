@@ -23,7 +23,7 @@ def test_skill_contains_final_summary_contract_and_medication_guardrails() -> No
     positions = [instruction.index(section) for section in required_sections]
 
     assert positions == sorted(positions)
-    assert "deepseek-v4-flash" in instruction
+    assert "gemini-3.1-flash-lite" in instruction
     assert "không chẩn đoán" in instruction.lower()
     assert "không kê đơn" in instruction.lower()
     assert "500" in instruction and "900 từ" in instruction

@@ -12,37 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# from google.adk.agents import Agent
-# from google.adk.apps import App
-# from google.adk.models.lite_llm import LiteLlm
-
-# from app.medication.skill_loader import load_medication_skill
-# from app.medication.tools import consult_medication
-# from config.settings import settings
-
-# deepseek_model = LiteLlm(
-#     model=f"openai/{settings.DEEPSEEK_MODEL}",
-#     api_key=settings.DEEPSEEK_API_KEY,
-#     api_base=settings.DEEPSEEK_BASE_URL,
-#     drop_params=True,
-#     temperature=0.3,
-#     max_tokens=8000,
-# )
-
-# root_agent = Agent(
-#     name="medication_consultation_agent",
-#     description="Tư vấn thuốc có grounding từ Neo4j và dữ liệu Long Châu.",
-#     model=deepseek_model,
-#     instruction=load_medication_skill(),
-#     tools=[consult_medication],
-#     output_key="final_summary",
-# )
-
-# app = App(
-#     root_agent=root_agent,
-#     name="app",
-# )
-
 from google.adk.agents import Agent
 from google.adk.apps import App
 from google.adk.models import Gemini
@@ -63,7 +32,7 @@ gemini_model = Gemini(
 
 root_agent = Agent(
     name="medication_consultation_agent",
-    description="Tư vấn thuốc có grounding từ Neo4j và dữ liệu Long Châu.",
+    description="Tu van thuoc co grounding tu Neo4j va du lieu Long Chau.",
     model=gemini_model,
     instruction=load_medication_skill(),
     tools=[consult_medication],

@@ -14,7 +14,7 @@ Biến môi trường:
     NEO4J_DATABASE=neo4j
 
 Chạy:
-    python -m service.neo4j_upsert_longchau_kg
+    python -m scripts.neo4j_upsert_longchau_kg
 
 === Neo4j Knowledge Graph Upsert Completed ===
 disease_nodes: 30

@@ -3,7 +3,7 @@ Ví dụ seed nhỏ để kiểm tra schema.
 Đây chỉ là ví dụ cấu trúc, không phải nội dung kê đơn.
 """
 
-from knowledge_graph_schema import (
+from core.schema import (
     ConsultationNeedNode,
     ConsultationNeedType,
     DiseaseHasConsultationNeedEdge,
