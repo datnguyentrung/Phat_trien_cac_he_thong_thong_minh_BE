@@ -1,0 +1,61 @@
+{
+  "application": "House-Price Prediction",
+  "primary_dataset": "Vietnam Real Estate Catalyst",
+  "target": "price_million_vnd",
+  "target_unit": "million VND",
+  "random_seed": 42,
+  "raw_dataframe_shape": [
+    66912,
+    11
+  ],
+  "clean_dataframe_shape": [
+    64447,
+    7
+  ],
+  "raw_input_features": [
+    "location",
+    "area_m2",
+    "bedrooms",
+    "bathrooms",
+    "floors",
+    "frontage"
+  ],
+  "final_feature_dimension": 269,
+  "final_test_model_input_shape": [
+    9668,
+    269
+  ],
+  "selected_model": "Random Forest",
+  "validation_primary_metric": "RMSE",
+  "test_metrics": {
+    "MAE": 6303.078143929321,
+    "MSE": 1059147517.3686942,
+    "RMSE": 32544.546660979842,
+    "R2": 0.1817501339185993
+  },
+  "dropped_columns": [
+    "id",
+    "detail_url",
+    "title",
+    "timeline_hours"
+  ],
+  "domain_bounds": {
+    "area_m2": [
+      1,
+      1000000
+    ],
+    "bedrooms": [
+      0,
+      100
+    ],
+    "bathrooms": [
+      0,
+      100
+    ],
+    "floors": [
+      0,
+      100
+    ]
+  },
+  "target_transform": "log1p during fit; expm1 during prediction"
+}

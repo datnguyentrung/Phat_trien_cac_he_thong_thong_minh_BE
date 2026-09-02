@@ -186,6 +186,7 @@ testem.log
 .DS_Store
 Thumbs.db
 *.vscode*
+!.vscode/
 
 # ADK
 .adk/
@@ -215,3 +216,4 @@ credentials*.json
 .claude**
 .codex**
 .gemini**
+.codegraph**

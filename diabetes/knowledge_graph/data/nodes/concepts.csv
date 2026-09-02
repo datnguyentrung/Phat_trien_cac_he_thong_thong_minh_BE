@@ -1,0 +1,17 @@
+concept_id,feature,category,name
+C_KIDNEYDISEASE,KidneyDisease,condition,Kidney disease
+C_HIGHBP,HighBP,condition,High blood pressure
+C_HIGHCHOL,HighChol,condition,High cholesterol
+C_ASTHMA,Asthma,condition,Asthma
+C_COPD,COPD,condition,COPD
+C_STROKE,Stroke,condition,Stroke
+C_HEARTDISEASEORATTACK,HeartDiseaseorAttack,condition,Heart disease or heart attack
+C_DIFFWALK,DiffWalk,condition,Difficulty walking
+C_DIABETES_BINARY,Diabetes_binary,condition,Diabetes
+C_CHOLCHECK,CholCheck,health_action,Cholesterol check
+C_SMOKER,Smoker,behavior,Smoking
+C_PHYSACTIVITY,PhysActivity,behavior,Physical activity
+C_HVYALCOHOLCONSUMP,HvyAlcoholConsump,behavior,Heavy alcohol consumption
+C_ANYHEALTHCARE,AnyHealthcare,healthcare_access,Has healthcare coverage/access
+C_NODOCBCCOST,NoDocbcCost,healthcare_access,Could not see doctor because of cost
+C_SEX,Sex,demographic,Sex code

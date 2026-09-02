@@ -1,0 +1,80 @@
+{
+  "application": "E-commerce Customer Behavior / Interest Discovery",
+  "dataset": "Women's Clothing E-Commerce Reviews",
+  "kaggle_url": "https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews/data",
+  "target": "Department Name",
+  "task_type": "multiclass_classification",
+  "random_seed": 42,
+  "raw_shape": [
+    23486,
+    11
+  ],
+  "clean_shape": [
+    23472,
+    12
+  ],
+  "model_features": [
+    "Age",
+    "Rating",
+    "Positive Feedback Count",
+    "Recommended IND",
+    "Combined Text"
+  ],
+  "numeric_features": [
+    "Age",
+    "Rating",
+    "Positive Feedback Count"
+  ],
+  "binary_features": [
+    "Recommended IND"
+  ],
+  "text_source_columns": [
+    "Title",
+    "Review Text"
+  ],
+  "text_feature": "Combined Text",
+  "excluded_columns": [
+    "Unnamed: 0",
+    "Clothing ID",
+    "Division Name",
+    "Class Name"
+  ],
+  "selected_model": "Logistic Regression",
+  "classes": [
+    "Bottoms",
+    "Dresses",
+    "Intimate",
+    "Jackets",
+    "Tops",
+    "Trend"
+  ],
+  "train_rows": 16430,
+  "validation_rows": 3521,
+  "test_rows": 3521,
+  "final_trainval_rows": 19951,
+  "final_feature_dimension": 8004,
+  "final_test_input_shape": [
+    3521,
+    8004
+  ],
+  "text_vectorizer": {
+    "lowercase": true,
+    "strip_accents": "unicode",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "max_features": 8000,
+    "sublinear_tf": true
+  },
+  "final_test_metrics": {
+    "Accuracy": 0.8295938653791537,
+    "Precision_macro": 0.6178159710569836,
+    "Recall_macro": 0.6612137752408255,
+    "F1_macro": 0.6338942566669052,
+    "F1_weighted": 0.8378710538098442
+  },
+  "final_test_roc_auc_weighted_ovr": 0.9644380883646643
+}

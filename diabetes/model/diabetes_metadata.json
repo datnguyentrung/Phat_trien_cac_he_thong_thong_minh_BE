@@ -1,0 +1,91 @@
+{
+  "application": "Diabetes Prediction",
+  "primary_dataset": "BRFSS 2023",
+  "target": "Diabetes_binary",
+  "random_seed": 42,
+  "raw_dataframe_shape": [
+    71814,
+    23
+  ],
+  "clean_dataframe_shape": [
+    70841,
+    23
+  ],
+  "raw_feature_count": 22,
+  "final_feature_dimension": 22,
+  "final_test_model_input_shape": [
+    10627,
+    22
+  ],
+  "feature_names": [
+    "KidneyDisease",
+    "Asthma",
+    "COPD",
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "DiffWalk",
+    "Sex",
+    "GenHlth",
+    "AgeGroup",
+    "Education",
+    "Income",
+    "BMI",
+    "MentHlth",
+    "PhysHlth"
+  ],
+  "selected_model": "SVM",
+  "validation_primary_metric": "F1",
+  "test_metrics": {
+    "Accuracy": 0.744895078573445,
+    "Precision": 0.7286678944137508,
+    "Recall": 0.8342997715691443,
+    "F1": 0.7779143114606374,
+    "ROC_AUC": 0.8047721073992402
+  },
+  "cleaning_rules": {
+    "duplicates": "drop exact duplicate rows",
+    "yes_no_12": "1->1, 2->0, other codes->missing",
+    "binary_01": "values outside {0,1}->missing",
+    "ordinal_ranges": {
+      "GenHlth": [
+        1,
+        5
+      ],
+      "AgeGroup": [
+        1,
+        13
+      ],
+      "Education": [
+        1,
+        6
+      ],
+      "Income": [
+        1,
+        11
+      ]
+    },
+    "continuous_ranges": {
+      "BMI": [
+        10,
+        100
+      ],
+      "MentHlth": [
+        0,
+        30
+      ],
+      "PhysHlth": [
+        0,
+        30
+      ]
+    },
+    "outliers": "IQR used for analysis only; no automatic IQR deletion"
+  }
+}
