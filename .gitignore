@@ -217,3 +217,8 @@ credentials*.json
 .codex**
 .gemini**
 .codegraph**
+
+a04/data
+
+a03/customer_behavior/data/ecommerce_product_reviews_dataset.csv
+a03/diabetes/knowledge_graph/data/relationships/respondent_concepts.csv
