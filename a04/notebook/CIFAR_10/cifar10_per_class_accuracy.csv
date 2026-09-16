@@ -1,0 +1,11 @@
+Label,Class,Samples,Correct,Accuracy
+0,airplane,500,404,0.808
+1,automobile,500,441,0.882
+2,bird,500,403,0.806
+3,cat,500,202,0.404
+4,deer,500,377,0.754
+5,dog,500,362,0.724
+6,frog,500,417,0.834
+7,horse,500,354,0.708
+8,ship,500,433,0.866
+9,truck,500,419,0.838

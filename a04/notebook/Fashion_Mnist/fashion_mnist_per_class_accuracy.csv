@@ -1,0 +1,11 @@
+Label,Class,Samples,Correct,Accuracy
+0,T-shirt/top,1000,929,0.929
+1,Trouser,1000,991,0.991
+2,Pullover,1000,892,0.892
+3,Dress,1000,939,0.939
+4,Coat,1000,885,0.885
+5,Sandal,1000,991,0.991
+6,Shirt,1000,731,0.731
+7,Sneaker,1000,963,0.963
+8,Bag,1000,979,0.979
+9,Ankle boot,1000,954,0.954
