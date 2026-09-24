@@ -1,0 +1,2 @@
+train_mean,train_std,image_height,image_width,channels
+0.13066047430038452,0.30810779333114624,28,28,1
